@@ -116,7 +116,7 @@ if st.button("🔍 计算风险", type="primary"):
     st.subheader("📈 SHAP特征贡献分析")
 
     # 计算SHAP值
-    data_train = pd.read_csv('imp_train.csv')
+    data_train = pd.read_csv(os.path.join(BASE_DIR, 'imp_train.csv'))
     columns_to_extract = ["cac", "CTI", "age", "c1q", "ca", "dm", "htn", "sex", "vhd"]
     extracted_train = data_train[columns_to_extract].copy()
 
@@ -165,5 +165,6 @@ if st.button("🔍 计算风险", type="primary"):
 
 st.markdown("---")
 st.markdown("💡 **说明**: 本计算器使用机器学习堆叠模型预测CAC风险，仅供参考。")
+
 
 
