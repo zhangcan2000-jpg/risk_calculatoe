@@ -27,16 +27,14 @@ st.markdown("**堆叠模型 (GBM + 朴素贝叶斯)**")
 # 加载模型
 @st.cache_resource
 def load_model():
-
-
-BASE_DIR = os.path.dirname(__file__)
-
-with open(os.path.join(BASE_DIR, 'cac_risk_model.pkl'), 'rb') as f:
-    model = pickle.load(f)
-
-with open(os.path.join(BASE_DIR, 'scaler.pkl'), 'rb') as f:
-    scaler = pickle.load(f)
-    return model, scaler
+    BASE_DIR = os.path.dirname(__file__)
+    
+    with open(os.path.join(BASE_DIR, 'cac_risk_model.pkl'), 'rb') as f:
+        model = pickle.load(f)
+    
+    with open(os.path.join(BASE_DIR, 'scaler.pkl'), 'rb') as f:
+        scaler = pickle.load(f)
+        return model, scaler
 
 model, scaler = load_model()
 
@@ -167,4 +165,5 @@ if st.button("🔍 计算风险", type="primary"):
 
 st.markdown("---")
 st.markdown("💡 **说明**: 本计算器使用机器学习堆叠模型预测CAC风险，仅供参考。")
+
 
