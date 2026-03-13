@@ -40,7 +40,6 @@ model, scaler = load_model()
 # 侧边栏 - 输入参数
 st.header("📊 输入患者信息")
 
- 两列布局
 col1, col2 = st.columns(2)
 
 with col1:
@@ -119,6 +118,7 @@ if st.button("🔍 计算风险", type="primary"):
 # 底部说明
 st.markdown("---")
 st.caption("💡 本计算器使用机器学习模型预测CAC风险，结果仅供参考，请结合临床实际情况判断。")
+
 
 
 
